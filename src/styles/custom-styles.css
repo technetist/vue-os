@@ -1,0 +1,15 @@
+#loading-screen {
+    background-image: url('../assets/images/backgrounds/loading_screen.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+
+#registration,
+#login,
+#passwordless {
+    background-image: url('../assets/images/backgrounds/loading_screen.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+}

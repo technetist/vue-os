@@ -1,0 +1,73 @@
+@font-face {
+  font-family: Techna Sans;
+  src: url('../assets/fonts/techna-sans/technasans-regular-webfont.woff') format('woff'),
+  url('../assets/fonts/techna-sans/technasans-regular-webfont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HK Grotesk';
+  src: url('../assets/fonts/hk-grotesk/HKGrotesk-Light.eot');
+  src: url('../assets/fonts/hk-grotesk/HKGrotesk-Light.eot?#iefix') format('embedded-opentype'),
+  url('../assets/fonts/hk-grotesk/HKGrotesk-Light.woff') format('woff'),
+  url('../assets/fonts/hk-grotesk/HKGrotesk-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'HK Grotesk';
+  src: url('../assets/fonts/hk-grotesk/HKGrotesk-Regular.eot');
+  src: url('../assets/fonts/hk-grotesk/HKGrotesk-Regular.eot?#iefix') format('embedded-opentype'),
+  url('../assets/fonts/hk-grotesk/HKGrotesk-Regular.woff') format('woff'),
+  url('../assets/fonts/hk-grotesk/HKGrotesk-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'HK Grotesk';
+  src: url('../assets/fonts/hk-grotesk/HKGrotesk-Medium.eot');
+  src: url('../assets/fonts/hk-grotesk/HKGrotesk-Medium.eot?#iefix') format('embedded-opentype'),
+  url('../assets/fonts/hk-grotesk/HKGrotesk-Medium.woff') format('woff'),
+  url('../assets/fonts/hk-grotesk/HKGrotesk-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'HK Grotesk';
+  src: url('../assets/fonts/hk-grotesk/HKGrotesk-SemiBold.eot');
+  src: url('../assets/fonts/hk-grotesk/HKGrotesk-SemiBold.eot?#iefix') format('embedded-opentype'),
+  url('../assets/fonts/hk-grotesk/HKGrotesk-SemiBold.woff') format('woff'),
+  url('../assets/fonts/hk-grotesk/HKGrotesk-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'HK Grotesk';
+  src: url('../assets/fonts/hk-grotesk/HKGrotesk-Bold.eot');
+  src: url('../assets/fonts/hk-grotesk/HKGrotesk-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../assets/fonts/hk-grotesk/HKGrotesk-Bold.woff') format('woff'),
+  url('../assets/fonts/hk-grotesk/HKGrotesk-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  color: #2c3e50;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-display;
+}
+
+p,
+a {
+  @apply font-body;
+}
