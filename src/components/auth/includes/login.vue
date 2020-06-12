@@ -63,7 +63,6 @@
   </div>
 </template>
 
-
 <script>
   import firebase from 'firebase';
   import Swal from 'sweetalert2';

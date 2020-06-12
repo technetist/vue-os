@@ -87,7 +87,6 @@
   </div>
 </template>
 
-
 <script>
   import firebase from 'firebase';
   import EventBus from '../../../EventBus';

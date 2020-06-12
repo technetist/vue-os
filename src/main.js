@@ -66,6 +66,9 @@ const router = new VueRouter({
       path: '/auth',
       name: 'Authentication',
       component: Authentication,
+      meta: {
+        guestOnly: true,
+      },
     },
     {
       path: '/auth/passwordless',
@@ -76,6 +79,10 @@ const router = new VueRouter({
       path: '/desktop',
       name: 'Desktop',
       component: Desktop,
+      meta: {
+        noNav: true,
+        requiresAuth: true,
+      },
     },
     {
       path: '/foo',
@@ -85,9 +92,22 @@ const router = new VueRouter({
   ],
 });
 
-new Vue({
-  render: (h) => h(App),
-  store,
-  router,
-  components: { App },
-}).$mount('#app');
+router.beforeEach((to, from, next) => {
+  const { currentUser } = firebase.auth();
+  const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
+  const guestOnly = to.matched.some((record) => record.meta.guestOnly);
+  if (requiresAuth && !currentUser) next('auth');
+  else if (guestOnly && currentUser) next(from);
+  else next();
+});
+
+let app = '';
+firebase.auth().onAuthStateChanged(() => {
+  if (!app) {
+    app = new Vue({
+      router,
+      store,
+      render: (h) => h(App),
+    }).$mount('#app');
+  }
+});
