@@ -5,4 +5,5 @@
 
 @import "tailwindcss/utilities";
 
+@import '~vue-context/dist/css/vue-context.css';
 @import "./custom-styles.css";
