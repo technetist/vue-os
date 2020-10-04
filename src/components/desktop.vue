@@ -8,6 +8,7 @@
     <vue-context ref="menu">
       <li>
         <a href="#" @click.prevent="getRandomBackground">Change Background</a>
+        <a href="#" @click.prevent="saveBackground">Save Background</a>
       </li>
     </vue-context>
   </div>
@@ -20,6 +21,9 @@
   import { mapGetters } from 'vuex';
   import axios from 'axios';
   import { VueContext } from 'vue-context';
+  import firebase, { auth } from '../firebase';
+
+  const db = firebase.firestore();
 
   export default {
     components: {
@@ -37,6 +41,11 @@
           .then((result) => {
             this.backgroundImage = `${result.data.urls.raw}&w=1500&dpr=2`;
           });
+      },
+      saveBackground() {
+        db.collection(`users/${auth.currentUser.uid}`).doc('user-settings').set({
+          'background-image': this.backgroundImage,
+        });
       },
     },
     created() {
